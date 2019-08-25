@@ -120,7 +120,6 @@ public class BSTree<Key extends Comparable<Key>, Value> {
             x = min(temp.right);
             x.right = deleteMin(temp.right);
             x.left = temp.left;
-
         }
         x.N = size(x.right) + size(x.left) + 1;
         return x;
@@ -141,7 +140,6 @@ public class BSTree<Key extends Comparable<Key>, Value> {
         print(x.left, x.key, x.value);
         System.out.print(x.key);
         print(x.right, x.key, x.value);
-
     }
     //前序打印bst各节点的value
     public void printPre()
@@ -158,7 +156,6 @@ public class BSTree<Key extends Comparable<Key>, Value> {
         System.out.print(x.key);
         printPre(x.left, x.key, x.value);
         printPre(x.right, x.key, x.value);
-
     }
     //后序打印bst各节点的value
     public void printPost()
@@ -174,7 +171,6 @@ public class BSTree<Key extends Comparable<Key>, Value> {
         System.out.print(x.key);
         printPost(x.left, x.key, x.value);
         printPost(x.right, x.key, x.value);
-
     }
 
 

@@ -148,21 +148,10 @@ public class AVLTree<Key extends Comparable<Key>, Value> { //extends BSTree {
     {
         if(x.left==null)
         {
-//            x = balance(x);
             return x.right;
         }
         x.left = deleteMin(x.left);
-//        if(height(x.right)-height(x.left)>1)
-//        {
-////            avlNode xRightTemp = x.right;
-//            if(height(x.right)>height(x.left))
-//                x = RRRotation(x);
-//            else
-//                x = RLRotation(x);
-//        }
-//        x.H = Math.max(height(x.left), height(x.right)) + 1;
         return balance(x);
-//        return x;
     }
 
     //删除最大节点
@@ -174,14 +163,6 @@ public class AVLTree<Key extends Comparable<Key>, Value> { //extends BSTree {
     {
         if(x.right==null) return x.left;
         x.right = deleteMax(x.right);
-//        if(height(x.left)-height(x.right)>1)
-//        {
-//            if(height(x.left)>height(x.right))
-//                x = RLRotation(x);
-//            else
-//                x = RRRotation(x);
-//        }
-//        x.H = Math.max(height(x.left), height(x.right)) + 1;
         return balance(x);
     }
 
@@ -197,37 +178,16 @@ public class AVLTree<Key extends Comparable<Key>, Value> { //extends BSTree {
         if(cmp<0)
         {
             x.left = delete(x.left, key);
-//            if(height(x.right)-height(x.left)==2)
-//            {
-//                avlNode xRight = x.right;
-//                if(height(xRight.right)>height(xRight.left))
-//                    xRight = RRRotation(xRight);
-//                else
-//                    xRight = RLRotation(xRight);
-//            }
         }
         else if(cmp>0)
         {
             x.right = delete(x.right, key);
-//            if(height(x.left)-height(x.right)==2)
-//            {
-//                avlNode xLeft = x.left;
-//                if(height(xLeft.left)>height(xLeft.right))
-//                    xLeft = LLRotation(xLeft);
-//                else
-//                    xLeft = LRRotation(xLeft);
-//            }
-//            x.H = Math.max(height(x.left), height(x.right)) + 1;
         }
         else
         {
             //两个子节点都不为null
             if(x.left!=null && x.right!=null)
             {
-//                avlNode temp = x;
-//                x = min(temp.right);
-//                x.right = deleteMin(temp.right);
-//                x.left = temp.left;
 //                右子树比左子树高，选择右子树的最小节点代替删除节点
                 if(height(x.right)>height(x.left))
                 {
@@ -301,7 +261,6 @@ public class AVLTree<Key extends Comparable<Key>, Value> { //extends BSTree {
         System.out.print(x.key);
         printPost(x.left, x.key, x.value);
         printPost(x.right, x.key, x.value);
-
     }
 
     //恢复平衡
