@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class TopK {
     public static void main(String[] arg){
@@ -41,7 +39,7 @@ public class TopK {
         return rlt;
     }
 
-    //利用堆
+    //利用堆，即优先队列
     private static List<Integer> heapway(int[] arr, int k){
         ArrayList<Integer> rlt = new ArrayList<>();
 
