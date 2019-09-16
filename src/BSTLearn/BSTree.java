@@ -4,8 +4,7 @@ package BSTLearn;
 //所有方法要有一个对外暴露的接口
 public class BSTree<Key extends Comparable<Key>, Value> {
     private Node root;
-    private class Node
-    {
+    private class Node {
         private Key key;
         private Value value;
         private Node left;
@@ -13,8 +12,7 @@ public class BSTree<Key extends Comparable<Key>, Value> {
         private int N;
 //        private int H;
 
-        public Node(Key key, Value value, int N)
-        {
+        public Node(Key key, Value value, int N) {
             this.key = key;
             this.value = value;
             this.N = N;
@@ -27,8 +25,7 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         return size(root);
     }
-    private int size(Node x)
-    {
+    private int size(Node x) {
         if(x==null) return 0;
         else return x.N;
     }
@@ -38,8 +35,7 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         return get(root, key);
     }
-    private Value get(Node x, Key key)
-    {
+    private Value get(Node x, Key key) {
         if(x==null) return null;
         int cmp = key.compareTo(x.key);
         if(cmp<0) return get(x.left, key);
@@ -52,14 +48,12 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         root = put(root, key, value);
     }
-    private Node put(Node x, Key key, Value value)
-    {
+    private Node put(Node x, Key key, Value value) {
         if(x==null) return new Node(key, value, 1);
         int cmp = key.compareTo(x.key);
         if(cmp<0) x.left = put(x.left, key, value);
         else if(cmp>0) x.right = put(x.right, key, value);
-        else
-        {
+        else {
             System.out.println("该节点已存在，更改value");
             x.value = value;
         }
@@ -71,8 +65,7 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         return min(root).key;
     }
-    private Node min(Node x)
-    {
+    private Node min(Node x) {
         if(x.left==null) return x;
         return min(x.left);
     }
@@ -81,20 +74,17 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         return max(root).key;
     }
-    private Node max(Node x)
-    {
+    private Node max(Node x) {
         if(x.right==null) return x;
         return x.right;
     }
 
     //删除最小节点
-    public void deleteMin()
-    {
+    public void deleteMin() {
         //更新root
         root = deleteMin(root);
     }
-    private Node deleteMin(Node x)
-    {
+    private Node deleteMin(Node x) {
         if(x.left==null) return x.right;
         x.left = deleteMin(x.left);
         x.N = size(x.left) + size(x.right) + 1;
@@ -106,14 +96,12 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     {
         root = delete(root, key);
     }
-    private Node delete(Node x, Key key)
-    {
+    private Node delete(Node x, Key key) {
         if(x==null) return null;
         int cmp = key.compareTo(x.key);
         if(cmp<0) x.left = delete(x.left, key);
         else if(cmp>0) x.right = delete(x.right, key);
-        else
-        {
+        else {
             if(x.left==null) return x.right;
             if(x.right==null) return x.left;
             Node temp = x;
@@ -126,52 +114,41 @@ public class BSTree<Key extends Comparable<Key>, Value> {
     }
 
     //中序打印bst各节点的value
-    public void print()
-    {
+    public void print() {
         System.out.println("中序遍历");
-        if(root!=null)
-        {
+        if(root!=null) {
             print(root, root.key, root.value);
         }
     }
-    private void print(Node x, Key key, Value value)
-    {
+    private void print(Node x, Key key, Value value) {
         if(x==null) return;
         print(x.left, x.key, x.value);
         System.out.print(x.key);
         print(x.right, x.key, x.value);
     }
     //前序打印bst各节点的value
-    public void printPre()
-    {
+    public void printPre() {
         System.out.println("\n前序遍历");
-        if(root!=null)
-        {
+        if(root!=null) {
             printPre(root, root.key, root.value);
         }
     }
-    private void printPre(Node x, Key key, Value value)
-    {
+    private void printPre(Node x, Key key, Value value) {
         if(x==null) return;
         System.out.print(x.key);
         printPre(x.left, x.key, x.value);
         printPre(x.right, x.key, x.value);
     }
     //后序打印bst各节点的value
-    public void printPost()
-    {
-        if(root!=null)
-        {
+    public void printPost() {
+        if(root!=null) {
             printPost(root, root.key, root.value);
         }
     }
-    private void printPost(Node x, Key key, Value value)
-    {
+    private void printPost(Node x, Key key, Value value) {
         if(x==null) return;
         System.out.print(x.key);
         printPost(x.left, x.key, x.value);
         printPost(x.right, x.key, x.value);
     }
-
-
 }
