@@ -52,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TopK">
+  <component name="RunManager" selected="Application.Stack">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DataStructuresAlgorithm" />
@@ -67,6 +67,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Stack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stack" />
+      <module name="DataStructuresAlgorithm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TopK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TopK" />
       <module name="DataStructuresAlgorithm" />
@@ -76,6 +83,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Stack" />
         <item itemvalue="Application.TopK" />
         <item itemvalue="Application.SortLearn" />
         <item itemvalue="Application.Main" />
@@ -106,7 +114,7 @@
       <workItem from="1566729011160" duration="18280000" />
       <workItem from="1567237974223" duration="1828000" />
       <workItem from="1568605449082" duration="1276000" />
-      <workItem from="1568648712725" duration="256000" />
+      <workItem from="1568648712725" duration="10750000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1566736447350</created>
