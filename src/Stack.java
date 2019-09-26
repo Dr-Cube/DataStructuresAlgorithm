@@ -85,6 +85,8 @@ public class Stack<T> {
         System.out.println(stack.peek());
         stack.pop();
         System.out.println(stack.peek());
+        stack.pop();
+//        stack.pop();
 
         Stack<String> stringStack = new Stack<>(5);
         stringStack.push("Hello");
